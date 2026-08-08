@@ -1,53 +1,64 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Yua</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f8dfe5">
+<title>For Yua</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-    min-height: 100vh;
-    overflow: hidden;
     background:
-        radial-gradient(circle at 50% 40%, #fff5f7 0%, #f8dfe5 35%, #d8aeb9 100%);
+        radial-gradient(circle at 50% 42%, #fff8fa 0%, #f8dfe5 42%, #d8aeb9 100%);
     font-family: Georgia, "Times New Roman", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #4b252d;
+    position: relative;
 }
 
 .glow {
     position: fixed;
-    width: 600px;
-    height: 600px;
+    width: min(90vw, 600px);
+    height: min(90vw, 600px);
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    filter: blur(80px);
+    background: rgba(255,255,255,0.28);
+    filter: blur(70px);
     pointer-events: none;
 }
 
 .container {
-    position: relative;
     width: 100%;
-    max-width: 900px;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .bouquet {
     position: relative;
-    width: 650px;
-    height: 650px;
+    width: min(92vw, 650px);
+    height: min(92vw, 650px);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
     animation: bouquetFloat 5s ease-in-out infinite;
 }
 
@@ -57,145 +68,145 @@ body {
     }
 
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-7px);
     }
 }
 
 .stem {
     position: absolute;
-    width: 5px;
-    height: 260px;
+    width: 0.77%;
+    height: 40%;
     background: linear-gradient(to bottom, #486b45, #263f29);
     border-radius: 10px;
-    transform-origin: bottom;
+    transform-origin: bottom center;
     z-index: 1;
 }
 
 .stem1 {
-    left: 210px;
-    top: 180px;
+    left: 32.3%;
+    top: 27.7%;
     transform: rotate(-18deg);
 }
 
 .stem2 {
-    left: 280px;
-    top: 170px;
+    left: 43.1%;
+    top: 26.2%;
     transform: rotate(-7deg);
 }
 
 .stem3 {
-    left: 350px;
-    top: 170px;
+    left: 53.8%;
+    top: 26.2%;
     transform: rotate(8deg);
 }
 
 .stem4 {
-    left: 420px;
-    top: 185px;
+    left: 64.6%;
+    top: 28.5%;
     transform: rotate(20deg);
 }
 
 .stem5 {
-    left: 245px;
-    top: 220px;
+    left: 37.7%;
+    top: 33.8%;
     transform: rotate(-25deg);
 }
 
 .stem6 {
-    left: 390px;
-    top: 220px;
+    left: 60%;
+    top: 33.8%;
     transform: rotate(25deg);
 }
 
 .leaf {
     position: absolute;
-    width: 55px;
-    height: 25px;
+    width: 8.5%;
+    height: 3.85%;
     background: #4d7048;
     border-radius: 100% 0 100% 0;
     z-index: 2;
 }
 
 .leaf1 {
-    left: 190px;
-    top: 350px;
+    left: 29.2%;
+    top: 53.8%;
     transform: rotate(-35deg);
 }
 
 .leaf2 {
-    left: 430px;
-    top: 350px;
+    left: 66.2%;
+    top: 53.8%;
     transform: rotate(35deg) scaleX(-1);
 }
 
 .leaf3 {
-    left: 235px;
-    top: 395px;
+    left: 36.2%;
+    top: 60.8%;
     transform: rotate(30deg);
 }
 
 .leaf4 {
-    left: 390px;
-    top: 395px;
+    left: 60%;
+    top: 60.8%;
     transform: rotate(-30deg) scaleX(-1);
 }
 
 .flower {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 18.46%;
+    height: 18.46%;
     z-index: 4;
 }
 
 .flower .petal {
     position: absolute;
-    width: 58px;
-    height: 72px;
+    width: 48.3%;
+    height: 60%;
     border-radius: 60% 60% 45% 45%;
-    left: 31px;
-    top: 24px;
+    left: 25.8%;
+    top: 20%;
     transform-origin: 50% 80%;
 }
 
 .flower .petal:nth-child(1) {
-    transform: rotate(0deg) translateY(-25px);
+    transform: rotate(0deg) translateY(-34.5%);
 }
 
 .flower .petal:nth-child(2) {
-    transform: rotate(60deg) translateY(-25px);
+    transform: rotate(60deg) translateY(-34.5%);
 }
 
 .flower .petal:nth-child(3) {
-    transform: rotate(120deg) translateY(-25px);
+    transform: rotate(120deg) translateY(-34.5%);
 }
 
 .flower .petal:nth-child(4) {
-    transform: rotate(180deg) translateY(-25px);
+    transform: rotate(180deg) translateY(-34.5%);
 }
 
 .flower .petal:nth-child(5) {
-    transform: rotate(240deg) translateY(-25px);
+    transform: rotate(240deg) translateY(-34.5%);
 }
 
 .flower .petal:nth-child(6) {
-    transform: rotate(300deg) translateY(-25px);
+    transform: rotate(300deg) translateY(-34.5%);
 }
 
 .flower .center {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 26.7%;
+    height: 26.7%;
     background: #d29a58;
     border-radius: 50%;
-    left: 44px;
-    top: 44px;
+    left: 36.7%;
+    top: 36.7%;
     z-index: 5;
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
 .rose {
-    left: 160px;
-    top: 120px;
+    left: 24.6%;
+    top: 18.5%;
     transform: scale(1.05);
 }
 
@@ -204,8 +215,8 @@ body {
 }
 
 .pink {
-    left: 270px;
-    top: 80px;
+    left: 41.5%;
+    top: 12.3%;
     transform: scale(1.15);
 }
 
@@ -214,8 +225,8 @@ body {
 }
 
 .white {
-    left: 390px;
-    top: 125px;
+    left: 60%;
+    top: 19.2%;
     transform: scale(.95);
 }
 
@@ -224,26 +235,26 @@ body {
 }
 
 .small1 {
-    left: 100px;
-    top: 230px;
+    left: 15.4%;
+    top: 35.4%;
     transform: scale(.72);
 }
 
 .small2 {
-    left: 455px;
-    top: 235px;
+    left: 70%;
+    top: 36.2%;
     transform: scale(.72);
 }
 
 .small3 {
-    left: 185px;
-    top: 275px;
+    left: 28.5%;
+    top: 42.3%;
     transform: scale(.62);
 }
 
 .small4 {
-    left: 390px;
-    top: 275px;
+    left: 60%;
+    top: 42.3%;
     transform: scale(.62);
 }
 
@@ -259,10 +270,10 @@ body {
 
 .wrapper {
     position: absolute;
-    width: 300px;
-    height: 220px;
-    bottom: 45px;
-    left: 175px;
+    width: 46.15%;
+    height: 33.85%;
+    bottom: 6.9%;
+    left: 26.9%;
     background: linear-gradient(135deg, #ead9ca, #cbb3a2);
     clip-path: polygon(12% 0, 88% 0, 100% 100%, 50% 78%, 0 100%);
     z-index: 3;
@@ -271,27 +282,28 @@ body {
 
 .ribbon {
     position: absolute;
-    width: 35px;
-    height: 210px;
+    width: 5.38%;
+    height: 32.3%;
     background: rgba(151,61,78,.75);
-    left: 132px;
-    top: 20px;
+    left: 43%;
+    top: 3.1%;
     z-index: 4;
     transform: rotate(-2deg);
 }
 
 .envelope-wrapper {
     position: absolute;
+    width: 36.9%;
     left: 50%;
-    top: 290px;
-    transform: translateX(-50%);
+    top: 44.6%;
+    transform: translate(-50%, -50%);
     z-index: 20;
 }
 
 .envelope {
     position: relative;
-    width: 240px;
-    height: 155px;
+    width: 100%;
+    aspect-ratio: 240 / 155;
     background: #f9eee5;
     border-radius: 4px;
     cursor: pointer;
@@ -303,9 +315,6 @@ body {
 
 .envelope:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow:
-        0 25px 40px rgba(70, 25, 35, .3),
-        0 8px 15px rgba(70, 25, 35, .15);
 }
 
 .envelope::before {
@@ -330,8 +339,8 @@ body {
 
 .seal {
     position: absolute;
-    width: 38px;
-    height: 38px;
+    width: 15.8%;
+    aspect-ratio: 1;
     background: #9e3148;
     left: 50%;
     top: 55%;
@@ -344,27 +353,27 @@ body {
 .seal::after {
     content: "";
     position: absolute;
-    width: 38px;
-    height: 38px;
+    width: 100%;
+    height: 100%;
     background: #9e3148;
     border-radius: 50%;
 }
 
 .seal::before {
-    left: -19px;
+    left: -50%;
 }
 
 .seal::after {
-    top: -19px;
+    top: -50%;
 }
 
 .seal span {
     position: absolute;
     transform: rotate(-45deg);
     color: white;
-    font-size: 17px;
-    left: 12px;
-    top: 9px;
+    font-size: clamp(11px, 2vw, 17px);
+    left: 31%;
+    top: 24%;
     z-index: 10;
 }
 
@@ -372,8 +381,8 @@ body {
     position: absolute;
     width: 100%;
     text-align: center;
-    bottom: -42px;
-    font-size: 14px;
+    bottom: -31%;
+    font-size: clamp(9px, 2vw, 14px);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #6e3a45;
@@ -391,18 +400,50 @@ body {
     }
 }
 
+.opened .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.opened .seal {
+    opacity: 0;
+}
+
+.opened .envelope {
+    transform: translateY(20px) scale(.9);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 15, 20, .35);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .letter {
     position: fixed;
     width: min(540px, 88vw);
-    max-height: 85vh;
+    max-height: 84vh;
     overflow-y: auto;
-    background: linear-gradient(rgba(255,255,255,.96), rgba(255,248,242,.98));
+    background: linear-gradient(rgba(255,255,255,.97), rgba(255,248,242,.98));
     border-radius: 5px;
     padding: 45px 40px;
     z-index: 100;
     box-shadow: 0 30px 80px rgba(50,20,25,.35);
     opacity: 0;
-    transform: translateY(80px) scale(.7);
+    transform: translate(-50%, -50%) translateY(80px) scale(.7);
+    left: 50%;
+    top: 50%;
     pointer-events: none;
     transition:
         opacity 1s ease,
@@ -419,15 +460,17 @@ body {
 }
 
 .letter h1 {
-    font-size: 30px;
+    font-size: clamp(24px, 5vw, 30px);
     font-weight: normal;
     font-style: italic;
     margin-bottom: 30px;
     color: #8e3047;
+    position: relative;
+    z-index: 2;
 }
 
 .letter p {
-    font-size: 17px;
+    font-size: clamp(14px, 3.8vw, 17px);
     line-height: 1.9;
     color: #51343a;
     margin-bottom: 22px;
@@ -438,7 +481,7 @@ body {
 .signature {
     margin-top: 30px;
     font-style: italic;
-    font-size: 21px;
+    font-size: clamp(18px, 4vw, 21px);
     color: #8e3047;
     position: relative;
     z-index: 2;
@@ -457,42 +500,9 @@ body {
     z-index: 5;
 }
 
-.close:hover {
-    opacity: 1;
-}
-
-.opened .flap {
-    transform: rotateX(180deg);
-    z-index: 1;
-}
-
-.opened .seal {
-    opacity: 0;
-}
-
-.opened .envelope {
-    transform: translateY(20px) scale(.9);
-}
-
 .show-letter {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-}
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(35, 15, 20, .35);
-    backdrop-filter: blur(3px);
-    z-index: 90;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease;
-}
-
-.overlay.active {
-    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) scale(1);
     pointer-events: auto;
 }
 
@@ -520,19 +530,35 @@ body {
 
 @media (max-width: 600px) {
     .bouquet {
-        transform: scale(.72);
+        width: 94vw;
+        height: 94vw;
+    }
+
+    .envelope-wrapper {
+        top: 45%;
     }
 
     .letter {
+        width: 88vw;
         padding: 40px 25px;
     }
 
-    .letter h1 {
-        font-size: 25px;
+    .letter::before {
+        inset: 10px;
     }
+}
 
-    .letter p {
-        font-size: 15px;
+@media (max-height: 650px) {
+    .bouquet {
+        width: 88vh;
+        height: 88vh;
+    }
+}
+
+@media (max-height: 500px) {
+    .bouquet {
+        width: 78vh;
+        height: 78vh;
     }
 }
 </style>
@@ -650,6 +676,7 @@ body {
         </div>
 
     </div>
+
 </div>
 
 <div class="overlay" id="overlay"></div>
@@ -694,7 +721,7 @@ const overlay = document.getElementById("overlay");
 const close = document.getElementById("close");
 const song = document.getElementById("song");
 
-song.volume = 0.2;
+song.volume = 0.5;
 
 let musicStarted = false;
 
@@ -724,7 +751,26 @@ document.addEventListener("click", () => {
     startMusic();
 }, { once: true });
 
-envelope.addEventListener("click", function () {
+document.addEventListener("touchstart", () => {
+    startMusic();
+}, { once: true, passive: true });
+
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        song.pause();
+    }
+});
+
+window.addEventListener("pagehide", () => {
+    song.pause();
+});
+
+window.addEventListener("beforeunload", () => {
+    song.pause();
+    song.currentTime = 0;
+});
+
+envelope.addEventListener("click", () => {
 
     startMusic();
 
@@ -735,9 +781,10 @@ envelope.addEventListener("click", function () {
     setTimeout(() => {
         letter.classList.add("show-letter");
     }, 600);
+
 });
 
-close.addEventListener("click", function () {
+close.addEventListener("click", () => {
 
     letter.classList.remove("show-letter");
     overlay.classList.remove("active");
@@ -745,9 +792,10 @@ close.addEventListener("click", function () {
     setTimeout(() => {
         envelope.parentElement.classList.remove("opened");
     }, 500);
+
 });
 
-overlay.addEventListener("click", function () {
+overlay.addEventListener("click", () => {
 
     letter.classList.remove("show-letter");
     overlay.classList.remove("active");
@@ -755,6 +803,7 @@ overlay.addEventListener("click", function () {
     setTimeout(() => {
         envelope.parentElement.classList.remove("opened");
     }, 500);
+
 });
 
 function createPetal() {
@@ -786,3 +835,4 @@ setInterval(createPetal, 700);
 
 </body>
 </html>
+```
