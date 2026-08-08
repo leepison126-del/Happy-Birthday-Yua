@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yua</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 40%, #fff5f7 0%, #f8dfe5 35%, #d8aeb9 100%);
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b252d;
+}
+
+.glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouquet {
+    position: relative;
+    width: 650px;
+    height: 650px;
+    animation: bouquetFloat 5s ease-in-out infinite;
+}
+
+@keyframes bouquetFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.stem {
+    position: absolute;
+    width: 5px;
+    height: 260px;
+    background: linear-gradient(to bottom, #486b45, #263f29);
+    border-radius: 10px;
+    transform-origin: bottom;
+    z-index: 1;
+}
+
+.stem1 {
+    left: 210px;
+    top: 180px;
+    transform: rotate(-18deg);
+}
+
+.stem2 {
+    left: 280px;
+    top: 170px;
+    transform: rotate(-7deg);
+}
+
+.stem3 {
+    left: 350px;
+    top: 170px;
+    transform: rotate(8deg);
+}
+
+.stem4 {
+    left: 420px;
+    top: 185px;
+    transform: rotate(20deg);
+}
+
+.stem5 {
+    left: 245px;
+    top: 220px;
+    transform: rotate(-25deg);
+}
+
+.stem6 {
+    left: 390px;
+    top: 220px;
+    transform: rotate(25deg);
+}
+
+.leaf {
+    position: absolute;
+    width: 55px;
+    height: 25px;
+    background: #4d7048;
+    border-radius: 100% 0 100% 0;
+    z-index: 2;
+}
+
+.leaf1 {
+    left: 190px;
+    top: 350px;
+    transform: rotate(-35deg);
+}
+
+.leaf2 {
+    left: 430px;
+    top: 350px;
+    transform: rotate(35deg) scaleX(-1);
+}
+
+.leaf3 {
+    left: 235px;
+    top: 395px;
+    transform: rotate(30deg);
+}
+
+.leaf4 {
+    left: 390px;
+    top: 395px;
+    transform: rotate(-30deg) scaleX(-1);
+}
+
+.flower {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    z-index: 4;
+}
+
+.flower .petal {
+    position: absolute;
+    width: 58px;
+    height: 72px;
+    border-radius: 60% 60% 45% 45%;
+    left: 31px;
+    top: 24px;
+    transform-origin: 50% 80%;
+}
+
+.flower .petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-25px);
+}
+
+.flower .petal:nth-child(2) {
+    transform: rotate(60deg) translateY(-25px);
+}
+
+.flower .petal:nth-child(3) {
+    transform: rotate(120deg) translateY(-25px);
+}
+
+.flower .petal:nth-child(4) {
+    transform: rotate(180deg) translateY(-25px);
+}
+
+.flower .petal:nth-child(5) {
+    transform: rotate(240deg) translateY(-25px);
+}
+
+.flower .petal:nth-child(6) {
+    transform: rotate(300deg) translateY(-25px);
+}
+
+.flower .center {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #d29a58;
+    border-radius: 50%;
+    left: 44px;
+    top: 44px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+.rose {
+    left: 160px;
+    top: 120px;
+    transform: scale(1.05);
+}
+
+.rose .petal {
+    background: linear-gradient(135deg, #b83b52, #8c2137);
+}
+
+.pink {
+    left: 270px;
+    top: 80px;
+    transform: scale(1.15);
+}
+
+.pink .petal {
+    background: linear-gradient(135deg, #e995aa, #c85e78);
+}
+
+.white {
+    left: 390px;
+    top: 125px;
+    transform: scale(.95);
+}
+
+.white .petal {
+    background: linear-gradient(135deg, #fffafa, #ead8dc);
+}
+
+.small1 {
+    left: 100px;
+    top: 230px;
+    transform: scale(.72);
+}
+
+.small2 {
+    left: 455px;
+    top: 235px;
+    transform: scale(.72);
+}
+
+.small3 {
+    left: 185px;
+    top: 275px;
+    transform: scale(.62);
+}
+
+.small4 {
+    left: 390px;
+    top: 275px;
+    transform: scale(.62);
+}
+
+.small1 .petal,
+.small3 .petal {
+    background: linear-gradient(135deg, #f1b0bd, #d97c92);
+}
+
+.small2 .petal,
+.small4 .petal {
+    background: linear-gradient(135deg, #d94d68, #a72e45);
+}
+
+.wrapper {
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    bottom: 45px;
+    left: 175px;
+    background: linear-gradient(135deg, #ead9ca, #cbb3a2);
+    clip-path: polygon(12% 0, 88% 0, 100% 100%, 50% 78%, 0 100%);
+    z-index: 3;
+    box-shadow: 0 15px 30px rgba(80,40,45,.15);
+}
+
+.ribbon {
+    position: absolute;
+    width: 35px;
+    height: 210px;
+    background: rgba(151,61,78,.75);
+    left: 132px;
+    top: 20px;
+    z-index: 4;
+    transform: rotate(-2deg);
+}
+
+.envelope-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 290px;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.envelope {
+    position: relative;
+    width: 240px;
+    height: 155px;
+    background: #f9eee5;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow:
+        0 15px 30px rgba(70, 25, 35, .25),
+        0 5px 10px rgba(70, 25, 35, .1);
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+        0 25px 40px rgba(70, 25, 35, .3),
+        0 8px 15px rgba(70, 25, 35, .15);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ead8ca;
+    clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f5e5d8;
+    clip-path: polygon(0 0, 100% 0, 50% 58%);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 5;
+}
+
+.seal {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: #9e3148;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 7;
+    transition: opacity .5s ease;
+}
+
+.seal::before,
+.seal::after {
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: #9e3148;
+    border-radius: 50%;
+}
+
+.seal::before {
+    left: -19px;
+}
+
+.seal::after {
+    top: -19px;
+}
+
+.seal span {
+    position: absolute;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 17px;
+    left: 12px;
+    top: 9px;
+    z-index: 10;
+}
+
+.press {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -42px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6e3a45;
+    opacity: .85;
+    animation: pulseText 2s infinite;
+}
+
+@keyframes pulseText {
+    0%, 100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.letter {
+    position: fixed;
+    width: min(540px, 88vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: linear-gradient(rgba(255,255,255,.96), rgba(255,248,242,.98));
+    border-radius: 5px;
+    padding: 45px 40px;
+    z-index: 100;
+    box-shadow: 0 30px 80px rgba(50,20,25,.35);
+    opacity: 0;
+    transform: translateY(80px) scale(.7);
+    pointer-events: none;
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.17,.67,.32,1.3);
+    text-align: center;
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(130,70,80,.2);
+    pointer-events: none;
+}
+
+.letter h1 {
+    font-size: 30px;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #8e3047;
+}
+
+.letter p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #51343a;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.signature {
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 21px;
+    color: #8e3047;
+    position: relative;
+    z-index: 2;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #8e3047;
+    cursor: pointer;
+    opacity: .6;
+    z-index: 5;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.opened .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.opened .seal {
+    opacity: 0;
+}
+
+.opened .envelope {
+    transform: translateY(20px) scale(.9);
+}
+
+.show-letter {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 15, 20, .35);
+    backdrop-filter: blur(3px);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.petal-fall {
+    position: fixed;
+    top: -30px;
+    width: 12px;
+    height: 18px;
+    background: #d8798e;
+    border-radius: 100% 0 100% 0;
+    opacity: .55;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .bouquet {
+        transform: scale(.72);
+    }
+
+    .letter {
+        padding: 40px 25px;
+    }
+
+    .letter h1 {
+        font-size: 25px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+
+    <div class="bouquet">
+
+        <div class="stem stem1"></div>
+        <div class="stem stem2"></div>
+        <div class="stem stem3"></div>
+        <div class="stem stem4"></div>
+        <div class="stem stem5"></div>
+        <div class="stem stem6"></div>
+
+        <div class="leaf leaf1"></div>
+        <div class="leaf leaf2"></div>
+        <div class="leaf leaf3"></div>
+        <div class="leaf leaf4"></div>
+
+        <div class="flower rose">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower pink">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower white">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower small1">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower small2">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower small3">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="flower small4">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="wrapper"></div>
+        <div class="ribbon"></div>
+
+        <div class="envelope-wrapper">
+
+            <div class="envelope" id="envelope">
+
+                <div class="flap"></div>
+
+                <div class="seal">
+                    <span>♥</span>
+                </div>
+
+            </div>
+
+            <div class="press">
+                Press to open
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="letter" id="letter">
+
+    <button class="close" id="close">×</button>
+
+    <h1>Happy Birthday Yua!!</h1>
+
+    <p>
+        I wish that you will enjoy this joyous day and I wish
+        that you will have a good health and keep always smiling
+        and be happy.
+    </p>
+
+    <p>
+        It might take a while until we meet but surely and
+        definitely we will meet. Well, not only meet but I hope
+        to be with you and always be with you and grow old with you.
+    </p>
+
+    <p>
+        But yea, today's your birthday! Enjoy it, have fun
+        and stay safe always.
+    </p>
+
+    <div class="signature">
+        From Lee ♥
+    </div>
+
+</div>
+
+<audio id="song" preload="auto">
+    <source src="shirushi.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const overlay = document.getElementById("overlay");
+const close = document.getElementById("close");
+const song = document.getElementById("song");
+
+song.volume = 0.2;
+
+let musicStarted = false;
+
+function startMusic() {
+    if (musicStarted) return;
+
+    song.currentTime = 15;
+
+    const playPromise = song.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                musicStarted = true;
+            })
+            .catch(() => {});
+    }
+}
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        startMusic();
+    }, 100);
+});
+
+document.addEventListener("click", () => {
+    startMusic();
+}, { once: true });
+
+envelope.addEventListener("click", function () {
+
+    startMusic();
+
+    envelope.parentElement.classList.add("opened");
+
+    overlay.classList.add("active");
+
+    setTimeout(() => {
+        letter.classList.add("show-letter");
+    }, 600);
+});
+
+close.addEventListener("click", function () {
+
+    letter.classList.remove("show-letter");
+    overlay.classList.remove("active");
+
+    setTimeout(() => {
+        envelope.parentElement.classList.remove("opened");
+    }, 500);
+});
+
+overlay.addEventListener("click", function () {
+
+    letter.classList.remove("show-letter");
+    overlay.classList.remove("active");
+
+    setTimeout(() => {
+        envelope.parentElement.classList.remove("opened");
+    }, 500);
+});
+
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.classList.add("petal-fall");
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    petal.style.animationDuration =
+        (5 + Math.random() * 7) + "s";
+
+    petal.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    petal.style.transform =
+        `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 13000);
+}
+
+setInterval(createPetal, 700);
+</script>
+
+</body>
+</html>
